@@ -2798,11 +2798,12 @@ body.v5-app {
     .v5-btn,
     .btn-cosmic,
     .btn-glow-large {
-        padding: 0.5rem 1rem !important;
-        /* py-2 px-4 */
-        font-size: 0.9rem !important;
-        width: 100% !important;
-        /* Full width for stacked buttons */
+        padding: 0.6rem 1rem !important;
+        /* slightly larger vertical padding */
+        font-size: 0.95rem !important;
+        width: 85% !important;
+        /* Slightly smaller than full width */
+        max-width: 320px !important;
         margin: 0 auto !important;
         justify-content: center !important;
     }
@@ -2813,8 +2814,8 @@ body.v5-app {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.75rem !important;
-        /* Tighter gap between stacked buttons */
+        gap: 1.25rem !important;
+        /* Increased gap between stacked buttons */
         width: 100% !important;
     }
 
