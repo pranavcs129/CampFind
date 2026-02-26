@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | Camp Find</title>
+    <link rel="stylesheet" href="styles.css?v=6">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body class="v5-app">
+
+    <nav class="navbar" style="position: relative; background: transparent;">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Cam𐌅ind</a>
+            <div class="nav-center-pill">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="help.html" class="active">Help</a></li>
+                </ul>
+            </div>
+            <div class="nav-auth">
+                <a href="login.html" class="btn-cosmic">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="v5-container v5-section" style="max-width: 800px;">
+
+        <!-- Large Glass Container for FAQ -->
+        <section class="v5-panel" style="margin-bottom: 3rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Help Center</h1>
+                <p style="color: rgba(255,255,255,0.6);">Frequently asked questions about reporting and claiming items.
+                </p>
+            </div>
+
+            <div class="v5-accordion-item">
+                <div class="v5-accordion-header">
+                    <span>How do I report a lost or found item?</span>
+                    <span class="material-icons-round">expand_more</span>
+                </div>
+                <div class="v5-accordion-body">
+                    <p>Log in to your dashboard and click "Report Item". Fill out the details including the item's
+                        category, where you last saw or found it, and a clear description or photo.</p>
+                </div>
+            </div>
+
+            <div class="v5-accordion-item">
+                <div class="v5-accordion-header">
+                    <span>How do I claim an item that belongs to me?</span>
+                    <span class="material-icons-round">expand_more</span>
+                </div>
+                <div class="v5-accordion-body">
+                    <p>When you find your item on the Browse page, click "View" and then "This is mine! (Claim)". You
+                        will be asked to provide proof of ownership in a short note to the finder.</p>
+                </div>
+            </div>
+
+            <div class="v5-accordion-item">
+                <div class="v5-accordion-header">
+                    <span>I claimed an item. What happens next?</span>
+                    <span class="material-icons-round">expand_more</span>
+                </div>
+                <div class="v5-accordion-body">
+                    <p>The person who posted the item will review your claim's proof. You can check the status (Pending,
+                        Accepted, or Rejected) under the "Claimed" tab in your Dashboard. If they accept your claim, an
+                        "Open Chat" button will appear!</p>
+                </div>
+            </div>
+
+            <div class="v5-accordion-item">
+                <div class="v5-accordion-header">
+                    <span>Someone claimed my posted item. What should I do?</span>
+                    <span class="material-icons-round">expand_more</span>
+                </div>
+                <div class="v5-accordion-body">
+                    <p>Go to the "Received Claims" tab in your Dashboard. You'll see their note and proof of ownership.
+                        If it matches, click "Accept". This resolves the item and opens a private chat between you two
+                        to arrange a meetup.</p>
+                </div>
+            </div>
+
+            <div class="v5-accordion-item">
+                <div class="v5-accordion-header">
+                    <span>Is Camp Find free to use?</span>
+                    <span class="material-icons-round">expand_more</span>
+                </div>
+                <div class="v5-accordion-body">
+                    <p>Yes, it is completely free for all verified university and campus community members.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Support Card -->
+        <section class="v5-panel" style="text-align: center;">
+            <span class="material-icons-round"
+                style="font-size: 2.5rem; color: #6366f1; margin-bottom: 1rem;">support_agent</span>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Still need help?</h2>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">Our support team is available 24/7 for
+                urgent inquiries.</p>
+            <a href="#" class="v5-btn-outline">Contact Support</a>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

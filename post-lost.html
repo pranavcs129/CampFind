@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Lost Item | Cam𐌅ind</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Cam𐌅ind</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container section-padding" style="padding-top: 120px;">
+        <div class="glass-card fade-up" style="max-width: 700px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-bottom: 2rem;">Report Lost Item</h2>
+            <form action="dashboard.html">
+                <div class="form-group">
+                    <label for="item-name" class="form-label">What did you lose?</label>
+                    <input type="text" id="item-name" class="form-input" placeholder="e.g. Black iPhone 13 Case"
+                        required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="form-group">
+                        <label for="category" class="form-label">Category</label>
+                        <select id="category" class="form-input" required>
+                            <option value="" disabled selected>Select Category</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="documents">Documents/ID</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date" class="form-label">Date Lost</label>
+                        <input type="date" id="date" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location" class="form-label">Last Seen Location</label>
+                    <input type="text" id="location" class="form-input" placeholder="e.g. Student Union Cafeteria"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea id="description" class="form-input"
+                        placeholder="Provide details like scratches, stickers, or unique markings..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Upload Photo (Optional)</label>
+                    <div class="image-upload-container" onclick="document.getElementById('item-image').click()">
+                        <span class="material-icons-round">cloud_upload</span>
+                        <p id="upload-text">Click to upload image</p>
+                        <input type="file" id="item-image" accept="image/*" style="display: none;"
+                            onchange="this.parentElement.querySelector('#upload-text').innerText = this.files[0] ? this.files[0].name : 'Click to upload image'">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: right;">
+                    <a href="dashboard.html" class="btn btn-secondary" style="margin-right: 1rem;">Cancel</a>
+                    <button type="submit" class="btn btn-primary">Submit Report</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script type="module" src="script.js"></script>
+    <style>
+        select.form-input option {
+            background-color: #000;
+            color: white;
+        }
+
+        /* Date input icon color adjustment */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    </style>
+</body>
+
+</html>

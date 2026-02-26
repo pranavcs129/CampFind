@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Camp Find</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Cam𐌅ind</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="glass-card auth-card fade-up">
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue your search</p>
+            </div>
+
+            <form class="auth-form">
+                <button type="button" class="btn-glow-large full-width btn-google">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="20" alt="G">
+                    Continue with Google
+                </button>
+                <div
+                    style="display: flex; align-items: center; justify-content: center; margin: 1rem 0; color: var(--text-secondary); opacity: 0.5; font-size: 0.9rem;">
+                    <span>OR</span>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="classic@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-glow-large full-width">Sign In</button>
+            </form>
+
+            <div class="auth-footer">
+                <p>New to Camp Find? <a href="signup.html">Create an account</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script type="module" src="script.js"></script>
+</body>
+
+</html>

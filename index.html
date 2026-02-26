@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Find | Smart Campus Lost & Found</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Cam𐌅ind</a>
+
+            <div class="nav-center-pill">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-auth">
+                <a href="signup.html" class="btn-cosmic">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <!-- Background Canvas -->
+        <canvas id="hero-sequence"></canvas>
+
+        <div class="container hero-content-centered">
+            <div class="hero-text-centered fade-up">
+                <h1>Smart recovery for <br><span class="text-gradient">campus essentials</span></h1>
+                <p class="hero-subtext">Built for students, by students. A secure, community-powered platform to report
+                    and recover lost valuables instantly.</p>
+                <div class="hero-buttons centered">
+                    <a href="post-lost.html" class="btn-cosmic">Report Lost Item</a>
+                    <a href="post-found.html" class="btn-cosmic">Report Found Item</a>
+                </div>
+            </div>
+
+            <!-- Dashboard Preview Removed -->
+            <!-- Watermark Concealer Removed from here -->
+        </div>
+        <!-- Watermark Concealer Moved Here -->
+        <div class="watermark-conceal"></div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="about-bg-elements">
+            <!-- Subtle cosmic particles -->
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="glow-orb-bg"></div>
+        </div>
+        <div class="container about-container">
+            <div class="about-text fade-up">
+                <span class="about-label">CAMP FIND</span>
+                <h2 class="about-heading">Redefining Campus Recovery</h2>
+                <p class="about-subtext">
+                    We're building the future of community-driven lost and found. Camp Find merges AI-powered matching
+                    with secure campus verification to create a seamless, trustworthy recovery ecosystem.
+                </p>
+                <div class="about-tags">
+                    <span class="tag">AI-Powered</span>
+                    <span class="tag">Student-First</span>
+                    <span class="tag">Secure</span>
+                </div>
+            </div>
+
+            <div class="about-visual slide-in-left">
+                <!-- Main Glass Card -->
+                <div class="glass-card-large float-animation">
+                    <div class="glass-header">
+                        <div class="dot-controls">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="glass-title">System Status</div>
+                    </div>
+                    <div class="glass-body">
+                        <div class="stat-row">
+                            <span class="material-icons-round icon-glow">security</span>
+                            <div class="stat-info">
+                                <h4>Encryption</h4>
+                                <span class="status-active">Active</span>
+                            </div>
+                        </div>
+                        <div class="stat-row delay-100">
+                            <span class="material-icons-round icon-glow">school</span>
+                            <div class="stat-info">
+                                <h4>Campus Verify</h4>
+                                <span class="status-active">Verified</span>
+                            </div>
+                        </div>
+                        <div class="stat-row delay-200">
+                            <span class="material-icons-round icon-glow">bolt</span>
+                            <div class="stat-info">
+                                <h4>AI Match</h4>
+                                <span class="status-processing">Processing...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Stat Card 1 -->
+                <div class="stat-card float-animation-delay-1 card-pos-1">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Recovery Rate</span>
+                </div>
+
+                <!-- Floating Stat Card 2 -->
+                <div class="stat-card float-animation-delay-2 card-pos-2">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Active Monitoring</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="process-section">
+        <div class="container">
+            <div class="section-header centered fade-up">
+                <span class="section-label">THE PROCESS</span>
+                <h2 class="section-title-large">How Camp Find Works</h2>
+                <p class="section-desc">Report, match, and recover in three simple steps.</p>
+            </div>
+
+            <div class="process-grid">
+                <!-- Connecting Line -->
+                <div class="process-line"></div>
+
+                <!-- Step 1 -->
+                <div class="process-card slide-in-left">
+                    <div class="step-bg-number">01</div>
+                    <div class="process-icon-box">
+                        <span class="material-icons-round">add_a_photo</span>
+                    </div>
+                    <div class="process-content">
+                        <h3>Report Item</h3>
+                        <p>Snap a photo and post details. Our AI automatically categorizes your item for instant
+                            matching.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-card slide-in-left delay-100">
+                    <div class="step-bg-number">02</div>
+                    <div class="process-icon-box">
+                        <span class="material-icons-round">how_to_reg</span>
+                    </div>
+                    <div class="process-content">
+                        <h3>Verify Ownership</h3>
+                        <p>Answer unique security questions or match ID details to prove the item is yours.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-card slide-in-left delay-200">
+                    <div class="step-bg-number">03</div>
+                    <div class="process-icon-box">
+                        <span class="material-icons-round">celebration</span>
+                    </div>
+                    <div class="process-content">
+                        <h3>Safe Recovery</h3>
+                        <p>Meet securely on campus or use a designated drop-off point to reclaim your belongings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="bento-section">
+        <div class="container">
+            <div class="section-header centered fade-up">
+                <span class="section-label">PLATFORM POWER</span>
+                <h2 class="section-title-large">Engineered for Trust</h2>
+                <p class="section-desc">Every feature is designed to make recovery faster, safer, and 100% verified.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Card 1: Large (AI) -->
+                <div class="bento-card span-2 fade-up">
+                    <div class="bento-content">
+                        <div class="bento-icon-lg">
+                            <span class="material-icons-round">auto_awesome</span>
+                        </div>
+                        <h3>Secure Claim Workflow</h3>
+                        <p>Item owners review and approve claims before chat access is granted, ensuring verified and
+                            controlled recoveries.</p>
+                    </div>
+                    <div class="bento-visual-ai"></div>
+                </div>
+
+                <!-- Card 2: Tall (Security) -->
+                <div class="bento-card span-row-2 fade-up delay-100">
+                    <div class="bento-content">
+                        <div class="bento-icon">
+                            <span class="material-icons-round">verified_user</span>
+                        </div>
+                        <h3>Campus-Only Access</h3>
+                        <p>Secure authentication restricts access to verified campus members, creating a trusted
+                            recovery environment.</p>
+                        <div class="security-badge-visual">
+                            <span class="material-icons-round">shield</span>
+                            <span>VERIFIED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Standard (Real-time) -->
+                <div class="bento-card fade-up delay-200">
+                    <div class="bento-content">
+                        <div class="bento-icon">
+                            <span class="material-icons-round">notifications_active</span>
+                        </div>
+                        <h3>Live Dashboard Tracking</h3>
+                        <p>Monitor claim approvals, new messages, and item status updates in real time through your
+                            personalized dashboard.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Standard (Map) -->
+                <div class="bento-card fade-up delay-300">
+                    <div class="bento-content">
+                        <div class="bento-icon">
+                            <span class="material-icons-round">map</span>
+                        </div>
+                        <h3>Controlled Meetups</h3>
+                        <p>Use secure in-app chat to coordinate recovery details safely before marking items as
+                            resolved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="cta-section fade-up">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Find Your Stuff?</h2>
+            <p class="cta-desc">Join thousands of students reclaiming their lost items every day.</p>
+            <a href="signup.html" class="btn-glow-large">
+                Get Started Now
+                <span class="material-icons-round">arrow_forward</span>
+            </a>
+        </div>
+        <div class="cta-bg-glow"></div>
+    </section>
+
+    <!-- Blend Transition & Floating Stars -->
+
+
+    <footer class="footer">
+        <!-- Floating Stars in Blend Area -->
+        <div class="star-field">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <canvas id="footer-sequence"></canvas>
+        <div class="container footer-content">
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="#">Twitter/X</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> <!-- Application Logic -->
+    <script type="module" src="script.js?v=4"></script>
+
+    <style>
+        /* Hero Redesign */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Top alignment to allow text spacing */
+            align-items: center;
+            padding-top: 120px;
+            overflow: hidden;
+            background: radial-gradient(circle at center bottom, rgba(20, 20, 30, 1) 0%, rgba(5, 5, 5, 1) 100%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, var(--bg-color) 20%, transparent 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #hero-sequence {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            opacity: 0.6;
+            /* Slight fade for text readability */
+        }
+
+        .hero-content-centered {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text-centered {
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-text-centered h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(180deg, #fff 0%, #aaa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .hero-buttons.centered {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .glow-effect {
+            position: relative;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            overflow: hidden;
+        }
+
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .glow-effect:hover::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Dashboard Preview */
+        .dashboard-preview {
+            width: 90%;
+            max-width: 1000px;
+            background: rgba(15, 15, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: none;
+            border-radius: 20px 20px 0 0;
+            margin-top: auto;
+            /* Push to bottom */
+            box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transform-origin: bottom center;
+            animation: slideUp 1s ease-out backwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .preview-brand {
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            color: #fff;
+        }
+
+        .preview-search {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            width: 300px;
+        }
+
+        .preview-user {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .preview-body {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 2fr;
+            gap: 1.5rem;
+        }
+
+        .preview-stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .preview-stat-card span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .preview-stat-card h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .activity-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.5rem;
+            height: 40px;
+            margin-top: 0.5rem;
+        }
+
+        .bar {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .bar:nth-child(even) {
+            background: var(--accent-primary);
+            opacity: 0.5;
+        }
+
+        .bar:nth-child(odd) {
+            background: var(--accent-secondary);
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero-text-centered h1 {
+                font-size: 2.5rem;
+            }
+
+            .preview-body {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-search {
+                display: none;
+            }
+        }
+    </style>
+</body>
+
+</html>
