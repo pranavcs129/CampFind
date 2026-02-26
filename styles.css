@@ -2638,143 +2638,166 @@ body.v5-app {
 
 /* =========================================
    COMPREHENSIVE MOBILE OVERRIDES (max-width: 768px) 
-   Added to reduce overwhelming UI on small screens
+   Added to reduce overwhelming UI on small screens and create a minimal aesthetic
    ========================================= */
 @media (max-width: 768px) {
 
-    /* Section Padding Adjustments */
-    section,
-    .v5-section,
-    .process-section-v2,
-    .bento-section,
-    .cta-section,
+    /* Proper container padding for breathability */
+    .container, 
+    .v5-container,
+    .dashboard-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Navbar compactness */
+    .navbar {
+        padding: 0.75rem 20px !important;
+    }
+
+    .nav-logo {
+        font-size: 1.25rem !important;
+    }
+
+    /* Section Padding Adjustments - Spacious vertical rhythm */
+    section, 
+    .v5-section, 
+    .process-section-v2, 
+    .bento-section, 
+    .cta-section, 
     .about-section {
-        padding: 4rem 0 !important;
+        padding: 6rem 0 !important;
     }
 
     .section-padding {
-        padding: 3rem 0 !important;
+        padding: 4rem 0 !important;
     }
 
     .hero {
         min-height: auto;
-        padding-top: 100px;
-        padding-bottom: 3rem;
+        padding-top: 120px;
+        padding-bottom: 4rem;
     }
 
     .browse-header {
-        padding-top: 100px;
-        padding-bottom: 2rem;
+        padding-top: 120px;
+        padding-bottom: 3rem;
     }
 
-    /* Typography Scaling */
-    h1,
-    .hero-text-centered h1 {
-        font-size: 2.2rem !important;
-        margin-bottom: 1rem;
+    /* Typography Scaling & Hierarchy */
+    h1, .hero-text-centered h1 {
+        font-size: 2rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
-    h2,
-    .about-heading,
-    .cta-title,
-    .neon-heading-lg {
-        font-size: 1.8rem !important;
-        margin-bottom: 1rem;
+    h2, .about-heading, .cta-title, .neon-heading-lg, .section-title {
+        font-size: 1.5rem !important;
+        margin-bottom: 0.75rem !important;
     }
 
     h3 {
-        font-size: 1.3rem !important;
-        margin-bottom: 0.5rem;
+        font-size: 1.15rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
-    p,
-    .hero-subtext,
-    .about-subtext,
-    .cta-desc,
-    .step-text p {
+    p, .hero-subtext, .about-subtext, .cta-desc, .step-text p {
         font-size: 0.95rem !important;
-        line-height: 1.5;
-        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 2rem !important;
     }
 
     .mission-text {
-        font-size: 1.4rem !important;
+        font-size: 1.25rem !important;
     }
 
     /* Layout & Gap Tightening */
-    .bento-grid,
-    .process-steps,
-    .v5-grid-3,
-    .v5-grid-2,
-    .mission-grid,
+    .bento-grid, 
+    .process-steps, 
+    .v5-grid-3, 
+    .v5-grid-2, 
+    .mission-grid, 
     .about-container {
-        gap: 1.5rem !important;
-    }
-
-    .process-steps {
-        gap: 2.5rem !important;
-        /* Slightly larger gap for process steps */
+        gap: 2rem !important;
     }
 
     .v5-dashboard-layout {
-        gap: 1.5rem;
+        gap: 2rem;
         padding: 1rem 0;
     }
 
-    /* Card Padding Reductions */
-    .bento-card,
-    .v5-card,
-    .glass-card,
+    /* Card Padding Reductions & Flattening */
+    .bento-card, 
+    .v5-card, 
+    .glass-card, 
     .v5-panel,
     .auth-card,
     .glass-body,
     .step-text {
-        padding: 1.25rem !important;
+        padding: 1.5rem !important;
+        box-shadow: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        backdrop-filter: blur(8px) !important;
+        background: rgba(20, 20, 20, 0.7) !important;
     }
 
-    /* Subdue Background Glows and Orbs */
-    .bg-glow,
-    .bg-glow-2,
+    /* Strip Extreme Background Glows and Orbs */
+    .bg-glow, 
+    .bg-glow-2, 
     .glow-orb-bg,
     .cta-bg-glow {
-        transform: scale(0.5) !important;
-        opacity: 0.15 !important;
-        filter: blur(50px) !important;
-        animation: none !important;
-        /* Stop animating on mobile to save performance */
+        display: none !important;
     }
 
     .orb-container {
-        width: 180px !important;
-        height: 180px !important;
+        display: none !important;
     }
 
-    /* Simplify Complex Visuals */
+    /* Simplify Complex Visuals in Cards */
     .orb-visual {
-        width: 80px !important;
-        height: 80px !important;
-        margin: 0 auto;
+        width: 60px !important;
+        height: 60px !important;
+        margin: 0 auto 1.5rem auto !important;
     }
 
     .orb-visual span {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
     }
-
+    
     .process-steps::before {
         display: none;
-        /* Remove dashed connected line on mobile to clear clutter */
     }
 
     .step-number-large {
-        font-size: 3rem !important;
-        top: -1.5rem !important;
+        font-size: 2.5rem !important;
+        top: -1.25rem !important;
+        opacity: 0.1 !important;
+    }
+
+    /* Button Refinements (Stacking & Sizing) */
+    .hero-buttons,
+    .cta-buttons,
+    .form-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+
+    .btn,
+    .v5-btn {
+        width: 85% !important;
+        margin: 0 auto !important;
+        justify-content: center !important;
+        padding: 0.8rem 1.5rem !important;
     }
 
     /* Navigation simplification */
     .nav-center-pill {
         padding: 0.5rem !important;
+        border-radius: 12px !important;
     }
-
+    
     .nav-links {
         gap: 1rem !important;
         justify-content: center;
