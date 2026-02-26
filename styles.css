@@ -2643,7 +2643,8 @@ body.v5-app {
 @media (max-width: 768px) {
 
     /* 1. Prevent Horizontal Overflow Globally */
-    html, body {
+    html,
+    body {
         overflow-x: hidden !important;
         width: 100% !important;
         position: relative;
@@ -2655,7 +2656,7 @@ body.v5-app {
     }
 
     /* 2. Container Padding (equiv to px-4 = 1rem = 16px) */
-    .container, 
+    .container,
     .v5-container,
     .dashboard-container {
         padding-left: 16px !important;
@@ -2675,7 +2676,8 @@ body.v5-app {
     /* 3. Hero padding (fix hidden text below navbar) */
     .hero {
         min-height: auto;
-        padding-top: 120px !important; /* Forces enough space below standard navbar height */
+        padding-top: 180px !important;
+        /* Forces enough space below standard navbar height */
         padding-bottom: 3rem !important;
     }
 
@@ -2685,25 +2687,31 @@ body.v5-app {
     }
 
     /* Section Spacing Adjustments */
-    section, 
-    .v5-section, 
-    .process-section-v2, 
-    .bento-section, 
-    .cta-section, 
+    section,
+    .v5-section,
+    .process-section-v2,
+    .bento-section,
+    .cta-section,
     .about-section {
         padding: 4rem 0 !important;
     }
 
     /* 4. Typography Scaling & Hierarchy */
     /* text-3xl = 1.875rem = 30px */
-    h1, .hero-text-centered h1 {
-        font-size: 1.875rem !important; 
+    h1,
+    .hero-text-centered h1 {
+        font-size: 1.875rem !important;
         line-height: 1.2 !important;
         margin-bottom: 1rem !important;
     }
 
-    h2, .about-heading, .cta-title, .neon-heading-lg, .section-title {
-        font-size: 1.5rem !important; /* text-2xl */
+    h2,
+    .about-heading,
+    .cta-title,
+    .neon-heading-lg,
+    .section-title {
+        font-size: 1.5rem !important;
+        /* text-2xl */
         margin-bottom: 0.75rem !important;
     }
 
@@ -2712,26 +2720,30 @@ body.v5-app {
         margin-bottom: 0.5rem !important;
     }
 
-    p, .hero-subtext, .about-subtext, .cta-desc, .step-text p {
+    p,
+    .hero-subtext,
+    .about-subtext,
+    .cta-desc,
+    .step-text p {
         font-size: 0.95rem !important;
         line-height: 1.5;
         margin-bottom: 1.5rem !important;
     }
 
     /* Layout & Gap Tightening */
-    .bento-grid, 
-    .process-steps, 
-    .v5-grid-3, 
-    .v5-grid-2, 
-    .mission-grid, 
+    .bento-grid,
+    .process-steps,
+    .v5-grid-3,
+    .v5-grid-2,
+    .mission-grid,
     .about-container {
         gap: 1.25rem !important;
     }
 
     /* Card Padding */
-    .bento-card, 
-    .v5-card, 
-    .glass-card, 
+    .bento-card,
+    .v5-card,
+    .glass-card,
     .v5-panel,
     .auth-card,
     .glass-body,
@@ -2744,8 +2756,8 @@ body.v5-app {
     }
 
     /* 5. Strip Background Animations constraints */
-    .bg-glow, 
-    .bg-glow-2, 
+    .bg-glow,
+    .bg-glow-2,
     .glow-orb-bg,
     .cta-bg-glow {
         display: none !important;
@@ -2770,7 +2782,7 @@ body.v5-app {
     .orb-visual span {
         font-size: 1.5rem !important;
     }
-    
+
     .process-steps::before {
         display: none;
     }
@@ -2786,9 +2798,11 @@ body.v5-app {
     .v5-btn,
     .btn-cosmic,
     .btn-glow-large {
-        padding: 0.5rem 1rem !important; /* py-2 px-4 */
+        padding: 0.5rem 1rem !important;
+        /* py-2 px-4 */
         font-size: 0.9rem !important;
-        width: 100% !important; /* Full width for stacked buttons */
+        width: 100% !important;
+        /* Full width for stacked buttons */
         margin: 0 auto !important;
         justify-content: center !important;
     }
@@ -2799,7 +2813,8 @@ body.v5-app {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 0.75rem !important; /* Tighter gap between stacked buttons */
+        gap: 0.75rem !important;
+        /* Tighter gap between stacked buttons */
         width: 100% !important;
     }
 
@@ -2810,7 +2825,8 @@ body.v5-app {
 
     /* 7. Search Box Compactness Setup (Browse Search) */
     .v5-input-group {
-        padding: 0.25rem 0.5rem !important; /* Shrink overall input group wrapper */
+        padding: 0.25rem 0.5rem !important;
+        /* Shrink overall input group wrapper */
     }
 
     .v5-input {
@@ -2838,7 +2854,7 @@ body.v5-app {
     .nav-center-pill {
         padding: 0.5rem !important;
     }
-    
+
     .nav-links {
         gap: 1rem !important;
         justify-content: center;
