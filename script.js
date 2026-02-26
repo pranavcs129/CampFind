@@ -1005,14 +1005,45 @@ document.addEventListener('DOMContentLoaded', () => {
         const render = () => {
             const img = images[currentFrame.index];
             if (img && img.complete) {
-                if (canvas.width !== img.width || canvas.height !== img.height) {
-                    canvas.width = img.width;
-                    canvas.height = img.height;
+                const parent = canvas.parentElement;
+
+                // Set canvas element dimensions to match parent
+                const targetWidth = parent.clientWidth || window.innerWidth;
+                const targetHeight = parent.clientHeight || window.innerHeight;
+
+                if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
                 }
+
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                context.drawImage(img, 0, 0);
+
+                // Calculate cover dimensions
+                const imgRatio = img.width / img.height;
+                const canvasRatio = canvas.width / canvas.height;
+
+                let drawWidth = canvas.width;
+                let drawHeight = canvas.height;
+                let offsetX = 0;
+                let offsetY = 0;
+
+                if (canvasRatio > imgRatio) {
+                    // Canvas is wider than image relative to height
+                    drawHeight = canvas.width / imgRatio;
+                    offsetY = (canvas.height - drawHeight) / 2;
+                } else {
+                    // Canvas is taller than image relative to width
+                    drawWidth = canvas.height * imgRatio;
+                    offsetX = (canvas.width - drawWidth) / 2;
+                }
+
+                context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
             }
         };
+
+        // Re-render on resize to keep the canvas properly sized
+        window.addEventListener('resize', render);
+
         const targetFPS = 24;
         const frameInterval = 1000 / targetFPS;
         let lastTime = 0;
