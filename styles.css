@@ -2635,3 +2635,154 @@ body.v5-app {
         transform: none;
     }
 }
+
+/* =========================================
+   COMPREHENSIVE MOBILE OVERRIDES (max-width: 768px) 
+   Added to reduce overwhelming UI on small screens
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Section Padding Adjustments */
+    section,
+    .v5-section,
+    .process-section-v2,
+    .bento-section,
+    .cta-section,
+    .about-section {
+        padding: 4rem 0 !important;
+    }
+
+    .section-padding {
+        padding: 3rem 0 !important;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 3rem;
+    }
+
+    .browse-header {
+        padding-top: 100px;
+        padding-bottom: 2rem;
+    }
+
+    /* Typography Scaling */
+    h1,
+    .hero-text-centered h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 1rem;
+    }
+
+    h2,
+    .about-heading,
+    .cta-title,
+    .neon-heading-lg {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.5rem;
+    }
+
+    p,
+    .hero-subtext,
+    .about-subtext,
+    .cta-desc,
+    .step-text p {
+        font-size: 0.95rem !important;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .mission-text {
+        font-size: 1.4rem !important;
+    }
+
+    /* Layout & Gap Tightening */
+    .bento-grid,
+    .process-steps,
+    .v5-grid-3,
+    .v5-grid-2,
+    .mission-grid,
+    .about-container {
+        gap: 1.5rem !important;
+    }
+
+    .process-steps {
+        gap: 2.5rem !important;
+        /* Slightly larger gap for process steps */
+    }
+
+    .v5-dashboard-layout {
+        gap: 1.5rem;
+        padding: 1rem 0;
+    }
+
+    /* Card Padding Reductions */
+    .bento-card,
+    .v5-card,
+    .glass-card,
+    .v5-panel,
+    .auth-card,
+    .glass-body,
+    .step-text {
+        padding: 1.25rem !important;
+    }
+
+    /* Subdue Background Glows and Orbs */
+    .bg-glow,
+    .bg-glow-2,
+    .glow-orb-bg,
+    .cta-bg-glow {
+        transform: scale(0.5) !important;
+        opacity: 0.15 !important;
+        filter: blur(50px) !important;
+        animation: none !important;
+        /* Stop animating on mobile to save performance */
+    }
+
+    .orb-container {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    /* Simplify Complex Visuals */
+    .orb-visual {
+        width: 80px !important;
+        height: 80px !important;
+        margin: 0 auto;
+    }
+
+    .orb-visual span {
+        font-size: 2rem !important;
+    }
+
+    .process-steps::before {
+        display: none;
+        /* Remove dashed connected line on mobile to clear clutter */
+    }
+
+    .step-number-large {
+        font-size: 3rem !important;
+        top: -1.5rem !important;
+    }
+
+    /* Navigation simplification */
+    .nav-center-pill {
+        padding: 0.5rem !important;
+    }
+
+    .nav-links {
+        gap: 1rem !important;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem !important;
+        padding: 0.3rem !important;
+    }
+}
