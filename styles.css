@@ -2025,22 +2025,22 @@ body.v5-app {
 
 /* --- Glass Components --- */
 .v5-panel {
-    background: transparent;
-    border: none;
+    background: transparent !important;
+    border: none !important;
     border-radius: var(--v5-radius);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     padding: 2.5rem;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .v5-card {
-    background: transparent;
-    border: none;
+    background: transparent !important;
+    border: none !important;
     border-radius: 20px;
     padding: 1.5rem;
     transition: transform 0.3s ease;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .v5-card:hover {
