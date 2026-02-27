@@ -2667,17 +2667,22 @@ body.v5-app {
     .navbar {
         height: auto !important;
         padding: 0 !important;
-        position: static !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
         transform: none !important;
         width: 100% !important;
-        z-index: auto !important;
+        z-index: 1000 !important;
+        background: transparent !important;
     }
 
     .nav-content {
         display: block !important;
         padding: 0 16px !important;
-        position: static !important;
-        transform: none !important;
+        position: relative;
+        height: 100vh;
+        pointer-events: none;
+        /* Let clicks pass through empty space */
     }
 
     .logo {
@@ -2687,6 +2692,7 @@ body.v5-app {
         z-index: 1005 !important;
         font-size: 1.25rem !important;
         text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(37, 99, 235, 0.5) !important;
+        pointer-events: auto !important;
     }
 
     .nav-auth {
@@ -2694,6 +2700,7 @@ body.v5-app {
         top: 10px !important;
         right: 16px !important;
         z-index: 1005 !important;
+        pointer-events: auto !important;
     }
 
     /* 3. Hero padding (fix hidden text below navbar) */
@@ -2846,8 +2853,7 @@ body.v5-app {
         padding: 0.4rem 1.2rem !important;
         width: auto !important;
         margin: 0 !important;
-        font-size: 0 !important;
-        /* Hide original text */
+        font-size: 0.9rem !important;
         border-radius: 50px !important;
         background: #000 !important;
         border: 1px solid rgba(255, 255, 255, 0.15) !important;
@@ -2855,15 +2861,6 @@ body.v5-app {
             0 -4px 15px rgba(59, 130, 246, 0.7),
             0 4px 15px rgba(249, 115, 22, 0.5),
             inset 0 0 10px rgba(255, 255, 255, 0.1) !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-
-    .nav-auth .btn-cosmic::after {
-        content: "Get Started";
-        font-size: 0.9rem !important;
-        color: white;
     }
 
     /* 7. Search Box Compactness Setup (Browse Search) */
@@ -2898,6 +2895,7 @@ body.v5-app {
         padding: 0.5rem !important;
         margin-top: 60px !important;
         margin-bottom: 10px !important;
+        pointer-events: auto !important;
     }
 
     .nav-links {
@@ -2906,10 +2904,20 @@ body.v5-app {
         width: 100%;
         margin: 0 !important;
         padding: 0 !important;
+        position: relative;
+        z-index: 1002;
     }
 
     .nav-links a {
         font-size: 0.85rem !important;
         padding: 0.3rem !important;
+    }
+
+    /* Hide extraneous nav buttons on mobile */
+    .nav-auth .btn-glass.login-btn,
+    .nav-auth .btn-neon,
+    .nav-auth a[href="login.html"],
+    .nav-auth a:not(.btn-cosmic) {
+        display: none !important;
     }
 }
