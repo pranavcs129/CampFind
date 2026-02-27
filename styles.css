@@ -2191,13 +2191,18 @@ body.v5-app {
 /* --- Browse Specific Overrides --- */
 #browse-grid .v5-card {
     border: none !important;
-    background: transparent !important;
+    background: var(--v5-glass-bg) !important;
+    /* Keep original background */
     box-shadow: none !important;
+    backdrop-filter: none !important;
+    /* Remove any backdrop blur "border" effect */
+    -webkit-backdrop-filter: none !important;
+    outline: none !important;
 }
 
 #browse-grid .v5-card:hover {
     border: none !important;
-    background: transparent !important;
+    background: var(--v5-glass-bg) !important;
     box-shadow: none !important;
     transform: translateY(-4px);
     /* Keep slight hover lift but no border/shadow */
