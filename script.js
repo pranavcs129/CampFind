@@ -550,6 +550,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderItems(items);
             };
 
+            const getDefaultIcon = (item) => {
+                const text = (item.title + ' ' + item.description + ' ' + item.category).toLowerCase();
+                if (text.includes('wallet') || text.includes('purse') || text.includes('cash')) return 'account_balance_wallet';
+                if (text.includes('phone') || text.includes('mobile') || text.includes('iphone') || text.includes('samsung')) return 'smartphone';
+                if (text.includes('key')) return 'vpn_key';
+                if (text.includes('bottle') || text.includes('flask') || text.includes('hydro')) return 'water_bottle';
+                if (text.includes('laptop') || text.includes('macbook') || text.includes('computer')) return 'laptop';
+                if (text.includes('bag') || text.includes('backpack')) return 'backpack';
+                if (text.includes('watch') || text.includes('smartwatch')) return 'watch';
+                if (text.includes('glasses') || text.includes('sunglasses')) return 'glasses';
+                if (text.includes('headphone') || text.includes('earbud') || text.includes('airpod')) return 'headphones';
+                if (text.includes('card') || text.includes('id') || text.includes('license')) return 'credit_card';
+                if (text.includes('book') || text.includes('notebook') || text.includes('diary')) return 'menu_book';
+                if (text.includes('clothing') || text.includes('shirt') || text.includes('jacket') || text.includes('hoodie')) return 'checkroom';
+                if (text.includes('umbrella')) return 'umbrella';
+                return 'help_outline'; // default fallback
+            };
+
             const renderItems = (items) => {
                 grid.innerHTML = '';
                 if (items.length === 0) {
@@ -572,10 +590,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (item.status === 'resolved') statusBadgeClass = 'status-resolved';
                     if (item.status === 'claimed') statusBadgeClass = 'status-resolved';
 
+                    const itemIcon = item.icon || getDefaultIcon(item);
+
                     card.innerHTML = `
                         <div style="position: relative;">
                             <div class="v5-item-img">
-                                ${item.image_url ? `<img src="${item.image_url}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">` : `<span class="material-icons-round" style="font-size: 3rem; color: rgba(255,255,255,0.1);">${item.icon || 'help_outline'}</span>`}
+                                ${item.image_url ? `<img src="${item.image_url}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">` : `<span class="material-icons-round" style="font-size: 3rem; color: rgba(255,255,255,0.1);">${itemIcon}</span>`}
                             </div>
                             <span class="status-tag-v4 tag-${item.type}">${item.type.charAt(0).toUpperCase() + item.type.slice(1)}</span>
                             <span class="status-corner-badge ${statusBadgeClass}">${item.status.toUpperCase()}</span>
