@@ -2920,4 +2920,101 @@ body.v5-app {
     .nav-auth a:not(.btn-cosmic) {
         display: none !important;
     }
+
+    /* Browse Page Compact Mobile Sizes */
+    #browse-grid.v5-grid-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important;
+    }
+
+    #browse-grid .v5-card {
+        padding: 0.6rem !important;
+    }
+
+    #browse-grid .v5-item-img {
+        height: 100px !important;
+        margin-bottom: 0.5rem !important;
+        border-radius: 8px !important;
+    }
+
+    #browse-grid h3 {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.2rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #browse-grid p {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.3 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    #browse-grid .v5-btn-outline {
+        padding: 0.3rem !important;
+        font-size: 0.75rem !important;
+        width: 100% !important;
+    }
+
+    #browse-grid>div>div:nth-child(4) {
+        /* location and time container */
+        font-size: 0.7rem !important;
+        margin-bottom: 0.5rem !important;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    #browse-grid>div>div:nth-child(4) span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    #browse-filters {
+        gap: 0.4rem !important;
+    }
+
+    #browse-filters .v5-chip {
+        padding: 0.35rem 0.8rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Search input compact */
+    .v5-input-group {
+        flex-direction: row !important;
+    }
+
+    .v5-input-group .v5-input {
+        padding: 0.6rem !important;
+        font-size: 0.9rem !important;
+    }
+
+    .v5-input-group .v5-btn {
+        padding: 0.6rem !important;
+        width: auto !important;
+        flex: 0 0 auto;
+    }
+
+    /* Smaller tags */
+    .status-tag-v4 {
+        padding: 2px 6px !important;
+        font-size: 0.6rem !important;
+        top: 0.4rem !important;
+        left: 0.4rem !important;
+    }
+
+    .status-corner-badge {
+        font-size: 0.55rem !important;
+        padding: 3px 6px !important;
+        top: 0.4rem !important;
+        right: 0.4rem !important;
+    }
 }
