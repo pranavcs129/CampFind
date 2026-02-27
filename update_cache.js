@@ -4,6 +4,7 @@ const version = Date.now();
 for (const f of files) {
     let content = fs.readFileSync(f, 'utf8');
     content = content.replace(/styles\.css(\?v=\d+)?/g, 'styles.css?v=' + version);
+    content = content.replace(/script\.js(\?v=[a-zA-Z0-9]+)?/g, 'script.js?v=' + version);
     fs.writeFileSync(f, content);
 }
 console.log('Cache buster updated to v=' + version);
