@@ -2035,17 +2035,17 @@ body.v5-app {
 }
 
 .v5-card {
-    background: var(--v5-glass-bg);
-    border: 2px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    border: none;
     border-radius: 20px;
     padding: 1.5rem;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease;
+    box-shadow: none;
 }
 
 .v5-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(99, 102, 241, 0.4);
-    background: rgba(255, 255, 255, 0.07);
+    background: transparent;
 }
 
 .v5-input-group {
@@ -2771,18 +2771,15 @@ body.v5-app {
     }
 
     /* Card Padding */
-    .bento-card,
-    .v5-card,
-    .glass-card,
     .v5-panel,
     .auth-card,
     .glass-body,
     .step-text {
         padding: 1.25rem !important;
         box-shadow: none !important;
-        border: 1px solid rgba(255, 255, 255, 0.05) !important;
-        backdrop-filter: blur(8px) !important;
-        background: rgba(20, 20, 20, 0.7) !important;
+        border: none !important;
+        backdrop-filter: none !important;
+        background: transparent !important;
     }
 
     /* 5. Strip Background Animations constraints */
