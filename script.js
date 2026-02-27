@@ -676,9 +676,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     document.getElementById('resolve-btn').addEventListener('click', async () => {
                         if (confirm("Mark this item as resolved?")) {
-                            await CampFindData.updateItemStatus(item.id, 'resolved');
-                            alert("Item marked as resolved.");
-                            window.location.reload();
+                            try {
+                                await CampFindData.updateItemStatus(item.id, 'resolved');
+                                alert("Item marked as resolved.");
+                                window.location.reload();
+                            } catch (error) {
+                                console.error("Error marking item resolved:", error);
+                                alert("Failed to mark item as resolved.");
+                            }
                         }
                     });
                 }
@@ -819,8 +824,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelectorAll('.accept-claim-btn').forEach(btn => {
                         btn.addEventListener('click', async (e) => {
                             if (confirm('Accept this claim? Other pending claims will remain pending until rejected.')) {
-                                await CampFindData.respondToClaim(e.target.dataset.id, e.target.dataset.item, 'accepted');
-                                window.location.reload();
+                                try {
+                                    await CampFindData.respondToClaim(e.target.dataset.id, e.target.dataset.item, 'accepted');
+                                    window.location.reload();
+                                } catch (error) {
+                                    console.error("Error accepting claim:", error);
+                                    alert("Failed to accept claim.");
+                                }
                             }
                         });
                     });
@@ -828,8 +838,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.querySelectorAll('.reject-claim-btn').forEach(btn => {
                         btn.addEventListener('click', async (e) => {
                             if (confirm('Decline this claim?')) {
-                                await CampFindData.respondToClaim(e.target.dataset.id, e.target.dataset.item, 'rejected');
-                                window.location.reload();
+                                try {
+                                    await CampFindData.respondToClaim(e.target.dataset.id, e.target.dataset.item, 'rejected');
+                                    window.location.reload();
+                                } catch (error) {
+                                    console.error("Error rejecting claim:", error);
+                                    alert("Failed to reject claim.");
+                                }
                             }
                         });
                     });
@@ -921,6 +936,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                     }
                 }
+            }).catch(error => {
+                console.error("Error loading item details:", error);
+                const container = document.getElementById('item-details-container');
+                if (container) container.innerHTML = '<p style="text-align: center; width: 100%; grid-column: 1 / -1; color: var(--text-secondary);">Error loading item details.</p>';
             });
         }
     }
@@ -974,10 +993,15 @@ document.addEventListener('DOMContentLoaded', () => {
         form.onsubmit = async (e) => {
             e.preventDefault();
             const desc = form.querySelector('textarea').value;
-            await CampFindData.addClaim(item.id, { description: desc, item_title: item.title });
-            alert('Claim submitted for review!');
-            modal.remove();
-            window.location.reload();
+            try {
+                await CampFindData.addClaim(item.id, { description: desc, item_title: item.title });
+                alert('Claim submitted for review!');
+                modal.remove();
+                window.location.reload();
+            } catch (error) {
+                console.error('Error submitting claim:', error);
+                alert('Failed to submit claim. Please try again.');
+            }
         };
     }
 
@@ -1377,20 +1401,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!text) return;
 
                     input.value = '';
-                    await CampFindData.sendMessage(claimId, text);
-                    // Fetch immediately to show the new message faster
-                    const fetchAndRenderMessages = async () => {
-                        const messages = await CampFindData.getMessages(claimId);
-                        const container = document.getElementById('chat-messages');
-                        if (!container) return;
-                        container.innerHTML = messages.map(msg => {
-                            const isMine = msg.sender_id === currentUser.id;
-                            const cssClass = isMine ? 'message-mine' : 'message-theirs';
-                            return `<div class="message-bubble ${cssClass}">${msg.message}</div>`;
-                        }).join('');
-                        container.scrollTop = container.scrollHeight;
-                    };
-                    await fetchAndRenderMessages();
+                    try {
+                        await CampFindData.sendMessage(claimId, text);
+                        // Fetch immediately to show the new message faster
+                        const fetchAndRenderMessages = async () => {
+                            const messages = await CampFindData.getMessages(claimId);
+                            const container = document.getElementById('chat-messages');
+                            if (!container) return;
+                            container.innerHTML = messages.map(msg => {
+                                const isMine = msg.sender_id === currentUser.id;
+                                const cssClass = isMine ? 'message-mine' : 'message-theirs';
+                                return `<div class="message-bubble ${cssClass}">${msg.message}</div>`;
+                            }).join('');
+                            container.scrollTop = container.scrollHeight;
+                        };
+                        await fetchAndRenderMessages();
+                    } catch (error) {
+                        console.error('Error sending message:', error);
+                        // alert('Failed to send message.'); // Silent error, just log it and fallback to next poll
+                    }
                 });
             }
 
