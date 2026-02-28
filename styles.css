@@ -2900,14 +2900,19 @@ body.v5-app {
         font-size: 1.25rem !important;
     }
 
+    /* Fix Browse Page Overlap on Mobile */
+    main.v5-container.v5-section {
+        padding-top: 140px !important;
+    }
+
     #browse-filters {
-        gap: 0.5rem !important;
-        margin-top: 0.5rem !important;
+        gap: 0.8rem !important;
+        margin-top: 1rem !important;
     }
 
     .v5-chip {
-        padding: 0.4rem 0.8rem !important;
-        font-size: 0.85rem !important;
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.9rem !important;
     }
 
     /* Navigation links */
