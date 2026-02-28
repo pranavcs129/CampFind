@@ -1,17 +1,25 @@
 import { supabase } from './supabase-client.js';
 
 // Global Loader Logic
-window.addEventListener('load', () => {
+if (sessionStorage.getItem('hasVisited')) {
     const loader = document.getElementById('global-loader');
     if (loader) {
-        setTimeout(() => {
-            loader.classList.add('loader-hidden');
-            setTimeout(() => {
-                loader.remove();
-            }, 600);
-        }, 300);
+        loader.style.display = 'none'; // hide immediately
     }
-});
+} else {
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('global-loader');
+        if (loader) {
+            setTimeout(() => {
+                loader.classList.add('loader-hidden');
+                setTimeout(() => {
+                    loader.remove();
+                    sessionStorage.setItem('hasVisited', 'true');
+                }, 600);
+            }, 300);
+        }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 

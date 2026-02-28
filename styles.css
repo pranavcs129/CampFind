@@ -3105,16 +3105,24 @@ body.v5-app {
     gap: 1.5rem;
 }
 
-.glow-orb-loader {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%,
-            rgba(37, 99, 235, 1) 0%,
-            rgba(124, 58, 237, 0.8) 50%,
-            transparent 100%);
-    box-shadow: 0 0 30px rgba(37, 99, 235, 0.6), 0 0 60px rgba(124, 58, 237, 0.4);
-    animation: loaderPulse 1.5s ease-in-out infinite alternate, loaderSpin 3s linear infinite;
+.rocket-loader {
+    font-size: 60px !important;
+    color: transparent;
+    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.7));
+    animation: loaderPulse 1.5s ease-in-out infinite alternate, rocketFloat 2s ease-in-out infinite alternate;
+}
+
+@keyframes rocketFloat {
+    0% {
+        transform: translateY(0px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateY(-15px) rotate(5deg);
+    }
 }
 
 .loader-text {
