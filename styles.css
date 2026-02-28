@@ -2852,6 +2852,11 @@ body.v5-app {
         pointer-events: none !important;
     }
 
+    #footer-sequence {
+        object-fit: contain !important;
+        object-position: bottom !important;
+    }
+
     .orb-visual {
         width: 60px !important;
         height: 60px !important;
