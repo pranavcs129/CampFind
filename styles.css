@@ -2547,10 +2547,13 @@ body.v5-app {
     }
 
     .v5-dashboard-layout {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         gap: 1rem;
         padding: 1rem;
-        height: auto;
+        height: 100vh;
+        min-height: 100vh;
     }
 
     .v5-sidebar {
