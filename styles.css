@@ -2852,11 +2852,6 @@ body.v5-app {
         pointer-events: none !important;
     }
 
-    #footer-sequence {
-        object-fit: contain !important;
-        object-position: bottom !important;
-    }
-
     .orb-visual {
         width: 60px !important;
         height: 60px !important;
@@ -3121,18 +3116,21 @@ body.v5-app {
 
 .sun {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: #ffdda1;
-    box-shadow: 0 0 20px 5px rgba(255, 180, 50, 0.8), 0 0 40px 10px rgba(255, 100, 0, 0.5);
+    background: radial-gradient(circle at center, #ffffff 0%, #fffbe0 20%, #fcd444 50%, #f7961e 80%, #d43b00 100%);
+    box-shadow:
+        0 0 15px 5px rgba(255, 230, 150, 0.9),
+        0 0 30px 15px rgba(255, 170, 50, 0.6),
+        0 0 60px 25px rgba(255, 80, 0, 0.3);
     z-index: 10;
 }
 
 .orbit {
     position: absolute;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -3140,48 +3138,63 @@ body.v5-app {
 }
 
 .orbit-1 {
-    width: 60px;
-    height: 60px;
-    animation-duration: 3s;
+    width: 55px;
+    height: 55px;
+    animation-duration: 2.5s;
 }
 
 .planet-1 {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #00ffff;
-    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.8);
+    background: radial-gradient(circle at 30% 30%, #e0e0e0, #888888 70%);
+    box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.8), 0 0 5px rgba(200, 200, 200, 0.3);
     transform: translateY(-50%);
 }
 
 .orbit-2 {
     width: 90px;
     height: 90px;
-    animation-duration: 5s;
-    animation-direction: reverse;
+    animation-duration: 4.5s;
 }
 
 .planet-2 {
-    width: 12px;
-    height: 12px;
+    position: relative;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background: #ff4757;
-    box-shadow: 0 0 15px 3px rgba(255, 71, 87, 0.8);
+    background: radial-gradient(circle at 30% 30%, #4da6ff, #005bbf 70%);
+    box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.8), 0 0 8px rgba(77, 166, 255, 0.5);
     transform: translateY(-50%);
 }
 
+/* Add a moon to planet 2 */
+.planet-2::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #dddddd, #888888 70%);
+    top: -6px;
+    left: -6px;
+    animation: orbitSpin 1.2s linear infinite reverse;
+    transform-origin: 13px 13px;
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.8);
+}
+
 .orbit-3 {
-    width: 120px;
-    height: 120px;
-    animation-duration: 8s;
+    width: 130px;
+    height: 130px;
+    animation-duration: 7s;
 }
 
 .planet-3 {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #2ed573;
-    box-shadow: 0 0 8px 2px rgba(46, 213, 115, 0.8);
+    background: radial-gradient(circle at 30% 30%, #ff8c42, #b83e00 70%);
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.8), 0 0 6px rgba(255, 140, 66, 0.4);
     transform: translateY(-50%);
 }
 
