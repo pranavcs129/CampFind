@@ -1,5 +1,18 @@
 import { supabase } from './supabase-client.js';
 
+// Global Loader Logic
+window.addEventListener('load', () => {
+    const loader = document.getElementById('global-loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('loader-hidden');
+            setTimeout(() => {
+                loader.remove();
+            }, 600);
+        }, 300);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Authentication Logic (Supabase) ---
@@ -644,6 +657,67 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Item Details Page
+    const viewButtons = document.querySelectorAll('[data-view]');
+    const views = document.querySelectorAll('.view-section');
+    const dashboardSidebar = document.querySelector('.v5-sidebar');
+    const dashboardMain = document.getElementById('dashboard-main-panel');
+    const mobileBackBtn = document.getElementById('mobile-back-btn');
+
+    // Function to handle showing the active view
+    const switchView = (targetViewId) => {
+        // Desktop / Generic view switch
+        viewButtons.forEach(b => b.classList.remove('active'));
+        const activeBtn = Array.from(viewButtons).find(b => b.dataset.view === targetViewId);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        // Note: in dashboard, views use IDs like view-dashboard, view-reports, etc.
+        const dashboardViews = document.querySelectorAll('.dashboard-view');
+        dashboardViews.forEach(v => {
+            if (v) v.style.display = 'none';
+        });
+
+        const targetView = document.getElementById(`view-${targetViewId}`);
+        if (targetView) targetView.style.display = 'block';
+
+        // Mobile specific logic for dashboard
+        if (dashboardSidebar && dashboardMain && window.innerWidth <= 768) {
+            dashboardSidebar.classList.add('mobile-hidden');
+            dashboardMain.classList.add('mobile-active');
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when opening a view
+        }
+    };
+
+    viewButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            // Prevent default only if it's a link (href="#")
+            if (btn.tagName === 'A') e.preventDefault();
+            const targetViewId = btn.dataset.view;
+            switchView(targetViewId);
+        });
+    });
+
+    // Mobile back button logic
+    if (mobileBackBtn && dashboardSidebar && dashboardMain) {
+        mobileBackBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Revert mobile view classes
+            dashboardSidebar.classList.remove('mobile-hidden');
+            dashboardMain.classList.remove('mobile-active');
+
+            viewButtons.forEach(b => b.classList.remove('active')); // clear active state on back
+
+            // Re-activate default view secretly behind the scenes so when desktop resizes it's still there
+            const dashboardViews = document.querySelectorAll('.dashboard-view');
+            dashboardViews.forEach(v => {
+                if (v) v.style.display = 'none';
+            });
+            const defaultView = document.getElementById('view-dashboard');
+            if (defaultView) defaultView.style.display = 'block';
+            const defaultBtn = Array.from(viewButtons).find(b => b.dataset.view === 'dashboard');
+            if (defaultBtn) defaultBtn.classList.add('active');
+        });
+    }
     if (pagePath.includes('item-details.html')) {
         const urlParams = new URLSearchParams(window.location.search);
         const itemId = urlParams.get('id');

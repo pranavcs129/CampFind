@@ -2557,6 +2557,33 @@ body.v5-app {
         position: relative;
         height: auto;
         margin-bottom: 1rem;
+        /* Default mobile sidebar state */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Mobile Dashboard Navigation Split */
+    aside.v5-panel.v5-sidebar.mobile-hidden {
+        display: none !important;
+    }
+
+    main#dashboard-main-panel {
+        display: none !important;
+    }
+
+    main#dashboard-main-panel.mobile-active {
+        display: block !important;
+    }
+
+    #mobile-back-btn {
+        display: inline-flex !important;
+        align-items: center;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        cursor: pointer;
     }
 
     .v5-nav-item {
@@ -2694,6 +2721,7 @@ body.v5-app {
         width: 100% !important;
         z-index: 1000 !important;
         background: transparent !important;
+        pointer-events: none !important;
     }
 
     .nav-content {
@@ -2821,6 +2849,7 @@ body.v5-app {
     .watermark-conceal {
         max-width: 100vw !important;
         overflow: hidden !important;
+        pointer-events: none !important;
     }
 
     .orb-visual {
@@ -2867,6 +2896,8 @@ body.v5-app {
         gap: 1.25rem !important;
         /* Increased gap between stacked buttons */
         width: 100% !important;
+        position: relative !important;
+        z-index: 50 !important;
     }
 
     .nav-auth .btn-cosmic {
@@ -3041,5 +3072,88 @@ body.v5-app {
         padding: 3px 6px !important;
         top: 0.4rem !important;
         right: 0.4rem !important;
+    }
+}
+
+/* =========================================
+   GLOBAL LOADER
+   ========================================= */
+.global-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s;
+}
+
+.global-loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.glow-orb-loader {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%,
+            rgba(37, 99, 235, 1) 0%,
+            rgba(124, 58, 237, 0.8) 50%,
+            transparent 100%);
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.6), 0 0 60px rgba(124, 58, 237, 0.4);
+    animation: loaderPulse 1.5s ease-in-out infinite alternate, loaderSpin 3s linear infinite;
+}
+
+.loader-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px rgba(124, 58, 237, 0.6);
+    animation: textPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes loaderPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes loaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes textPulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
