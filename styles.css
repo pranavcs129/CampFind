@@ -2551,8 +2551,7 @@ body.v5-app {
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        padding: 6rem 1rem 1rem 1rem;
-        /* Added padding to clear the 25px top logo */
+        padding: 1rem;
         height: 100vh;
         min-height: 100vh;
     }
@@ -2568,15 +2567,7 @@ body.v5-app {
 
     /* Mobile Dashboard Navigation Split */
     .v5-sidebar .logo {
-        position: fixed !important;
-        top: 25px !important;
-        left: 0 !important;
-        width: 100% !important;
-        text-align: center !important;
-        font-size: 2rem !important;
-        margin: 0 !important;
-        z-index: 1005 !important;
-        text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(37, 99, 235, 0.5) !important;
+        display: none !important;
     }
 
     aside.v5-panel.v5-sidebar.mobile-hidden {
