@@ -1153,28 +1153,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 let offsetX = 0;
                 let offsetY = 0;
 
-                const isMobile = window.innerWidth <= 768;
-
-                if (isMobile) {
-                    // Mobile: use 'contain' logic so sides don't get cut off
-                    if (canvasRatio > imgRatio) {
-                        drawHeight = canvas.height;
-                        drawWidth = canvas.height * imgRatio;
-                        offsetX = (canvas.width - drawWidth) / 2;
-                    } else {
-                        drawWidth = canvas.width;
-                        drawHeight = canvas.width / imgRatio;
-                        offsetY = (canvas.height - drawHeight) / 2;
-                    }
+                if (canvasRatio > imgRatio) {
+                    // Canvas is wider than image relative to height
+                    drawHeight = canvas.width / imgRatio;
+                    offsetY = (canvas.height - drawHeight) / 2;
                 } else {
-                    // Desktop: use 'cover' logic for immersive background
-                    if (canvasRatio > imgRatio) {
-                        drawHeight = canvas.width / imgRatio;
-                        offsetY = (canvas.height - drawHeight) / 2;
-                    } else {
-                        drawWidth = canvas.height * imgRatio;
-                        offsetX = (canvas.width - drawWidth) / 2;
-                    }
+                    // Canvas is taller than image relative to width
+                    drawWidth = canvas.height * imgRatio;
+                    offsetX = (canvas.width - drawWidth) / 2;
                 }
 
                 context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
