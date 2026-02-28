@@ -2582,6 +2582,11 @@ body.v5-app {
         display: block !important;
     }
 
+    /* Hide Quick Actions specifically on mobile */
+    #dashboard-quick-actions {
+        display: none !important;
+    }
+
     #mobile-back-btn {
         display: inline-flex !important;
         align-items: center;
