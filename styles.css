@@ -3105,23 +3105,62 @@ body.v5-app {
     gap: 1.5rem;
 }
 
-.rocket-loader {
-    font-size: 60px !important;
-    color: transparent;
-    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 50%, #ec4899 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.7));
-    animation: loaderPulse 1.5s ease-in-out infinite alternate, rocketFloat 2s ease-in-out infinite alternate;
+.orbital-loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes rocketFloat {
+.loader-orbit-path {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.loader-orbit-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #00ffff;
+    -webkit-mask: conic-gradient(from 0deg, transparent 0%, #000 80%, #000 100%);
+    mask: conic-gradient(from 0deg, transparent 0%, #000 80%, #000 100%);
+    animation: orbitSpin 1.5s linear infinite;
+}
+
+.comet-head {
+    position: absolute;
+    top: -2px;
+    left: 48px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 10px 4px #00ffff, 0 0 20px 8px #0088ff;
+}
+
+.loader-center-orb {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffdda1;
+    box-shadow: 0 0 20px 4px rgba(255, 180, 50, 0.8), 0 0 40px 8px rgba(255, 100, 0, 0.5);
+    z-index: 2;
+}
+
+@keyframes orbitSpin {
     0% {
-        transform: translateY(0px) rotate(-5deg);
+        transform: rotate(0deg);
     }
 
     100% {
-        transform: translateY(-15px) rotate(5deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -3134,25 +3173,15 @@ body.v5-app {
     animation: textPulse 1.5s ease-in-out infinite alternate;
 }
 
-@keyframes loaderPulse {
+@keyframes textPulse {
     0% {
-        transform: scale(0.8);
-        opacity: 0.8;
+        transform: scale(0.95);
+        opacity: 0.5;
     }
 
     100% {
-        transform: scale(1.1);
+        transform: scale(1.05);
         opacity: 1;
-    }
-}
-
-@keyframes loaderSpin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
     }
 }
 
