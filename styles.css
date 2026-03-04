@@ -454,6 +454,12 @@ section::after {
     align-items: center;
 }
 
+@media (min-width: 769px) {
+    .nav-auth .btn-glass {
+        display: none !important;
+    }
+}
+
 /* Glass Login Button */
 .btn-glass {
     display: inline-block;

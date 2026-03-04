@@ -122,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const navAuthContainer = document.querySelector('.nav-auth');
             if (navAuthContainer && !navAuthContainer.querySelector('.btn-glass')) {
                 navAuthContainer.innerHTML = `
-                    <a href="login.html" class="btn-glass">Log In</a>
                     <a href="signup.html" class="btn-cosmic">Get Started</a>
                  `;
             }
